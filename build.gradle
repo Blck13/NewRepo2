@@ -1,21 +1,22 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(ScalaCompile) {
+    scalaCompileOptions.encoding = 'UTF-8'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
-
-test {
-    useJUnitPlatform()
-    // comment
-    // comment 2
+    testImplementation (
+            group: 'com.codeborne', name: 'selenide', version: '7.3.2',
+            "org.junit.jupiter:junit-jupiter:5.9.2"
+    )
 }
