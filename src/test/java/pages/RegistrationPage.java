@@ -7,8 +7,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static pages.components.CalendarComponent.setDate;
 
-
-public abstract class RegistrationPage {
+public class RegistrationPage {
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
     private final String TITLE_TEXT = "Student Registration Form";
     private SelenideElement
@@ -113,7 +112,4 @@ public abstract class RegistrationPage {
     }
 
 
-}
-
-public void main() {
 }
